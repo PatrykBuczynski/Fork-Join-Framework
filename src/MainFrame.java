@@ -8,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JSlider;
 import javax.swing.JTextArea;
 
 
@@ -22,6 +23,9 @@ public class MainFrame extends JFrame {
 	JLabel rightTitle;
 	JLabel multiplyInfo;
 	
+	JSlider leftSlider;
+	JSlider rightSlider;
+	
 	
 	
 	
@@ -31,29 +35,31 @@ public class MainFrame extends JFrame {
 		setTitle("Fork-Join Framework Example");
 		this.setLayout(new GridLayout(1,2));
 		
-		leftPanel = new JPanel();
-		leftPanel.setLayout(new GridLayout(3,1));
+		leftPanel = new JPanel(new BorderLayout());
 		leftPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(leftPanel);
 		
-		rightPanel = new JPanel();
-		rightPanel.setLayout(new GridLayout(3,1));
+		rightPanel = new JPanel(new BorderLayout());
 		rightPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(rightPanel);
 		
 
 
 		leftTitle = new JLabel("Input Matrices");
-		leftPanel.add(leftTitle);
-		leftPanel.add(new Matrix(true).scroll);
+		leftPanel.add(leftTitle, BorderLayout.NORTH);
+		leftPanel.add(new Matrix(true).scroll, BorderLayout.CENTER);
 		runButton = new JButton("Run");
-		leftPanel.add(runButton);
+		leftPanel.add(runButton, BorderLayout.SOUTH);
+		leftSlider = new JSlider(JSlider.VERTICAL, 0, 99, 0);
+		leftPanel.add(leftSlider, BorderLayout.WEST);
 		
 		rightTitle = new JLabel("Output Matrices");
-		rightPanel.add(rightTitle);
-		rightPanel.add(new Matrix(false).scroll);
+		rightPanel.add(rightTitle, BorderLayout.NORTH);
+		rightPanel.add(new Matrix(false).scroll, BorderLayout.CENTER);
 		multiplyInfo = new JLabel("Na razie nic tu nie ma"); // Prawdopodobnie trzeba to bedzie zmienic - obecnie robi 
-
+		rightPanel.add(multiplyInfo, BorderLayout.SOUTH);
+		rightSlider = new JSlider(JSlider.VERTICAL, 0, 99, 0);
+		rightPanel.add(rightSlider, BorderLayout.WEST);
 		
 		
 		
