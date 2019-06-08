@@ -31,6 +31,7 @@ public class MainFrame extends JFrame {
 	
 	
 	public MainFrame() {
+		
 		setSize(800,600);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Fork-Join Framework Example");
