@@ -49,7 +49,11 @@ public class Matrix extends JTextArea{
 	}
 	
 	
+<<<<<<< HEAD
 	Matrix(int isRand){
+=======
+	Matrix(boolean isRand){
+>>>>>>> branch 'master' of https://github.com/buczu1612/Fork-Join-Framework.git
 		
 		super();
 		Random rand = new Random();
@@ -63,6 +67,7 @@ public class Matrix extends JTextArea{
 		}
 		this.setEditable(false);
 		
+<<<<<<< HEAD
 		switch(isRand){
 			case 1:
 				this.printMatrix(randomValues);
@@ -71,12 +76,25 @@ public class Matrix extends JTextArea{
 				this.printMatrix(inicialValues);
 				break;
 		}
+=======
+		if(isRand) {
+			this.printMatrix(randomValues);
+		}
+		else {
+			this.printMatrix(inicialValues);
+		}
+
+>>>>>>> branch 'master' of https://github.com/buczu1612/Fork-Join-Framework.git
 	}
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setSize(new Dimension(500, 500));
+<<<<<<< HEAD
 		frame.add(new Matrix(1).scroll);
+=======
+		frame.add(new Matrix(true).scroll);
+>>>>>>> branch 'master' of https://github.com/buczu1612/Fork-Join-Framework.git
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		
 		
