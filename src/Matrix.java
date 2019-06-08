@@ -49,7 +49,7 @@ public class Matrix extends JTextArea{
 	}
 	
 	
-	Matrix(int isRand){
+	Matrix(boolean isRand){
 		
 		super();
 		Random rand = new Random();
@@ -63,20 +63,19 @@ public class Matrix extends JTextArea{
 		}
 		this.setEditable(false);
 		
-		switch(isRand){
-			case 1:
-				this.printMatrix(randomValues);
-				break;
-			case 0:
-				this.printMatrix(inicialValues);
-				break;
+		if(isRand) {
+			this.printMatrix(randomValues);
 		}
+		else {
+			this.printMatrix(inicialValues);
+		}
+
 	}
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setSize(new Dimension(500, 500));
-		frame.add(new Matrix(1).scroll);
+		frame.add(new Matrix(true).scroll);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		
 		

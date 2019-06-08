@@ -18,9 +18,6 @@ public class MainFrame extends JFrame {
 	JPanel leftPanel;
 	JPanel rightPanel;
 	
-	//JTextArea leftMatrix;
-	JTextArea rightMatrix;
-	
 	JLabel leftTitle;
 	JLabel rightTitle;
 	JLabel multiplyInfo;
@@ -45,28 +42,16 @@ public class MainFrame extends JFrame {
 		add(rightPanel);
 		
 
-		String inicialArea = new String();
-		/*Wypelniamy macierz 10x10 do wyswietlenia wypelniona zerami */
-		for(int i = 0; i < 5; i++) {  					
-			for(int j = 0; j < 5; j++) {
-
-				inicialArea =  inicialArea.concat("| 0 ");
-				
-				
-			}
-			inicialArea = inicialArea.concat(" |\n");
-		}
 
 		leftTitle = new JLabel("Input Matrices");
 		leftPanel.add(leftTitle);
-		leftPanel.add(new Matrix(1).scroll);
+		leftPanel.add(new Matrix(true).scroll);
 		runButton = new JButton("Run");
 		leftPanel.add(runButton);
 		
 		rightTitle = new JLabel("Output Matrices");
 		rightPanel.add(rightTitle);
-		//rightMatrix = new JTextArea(inicialArea);
-		rightPanel.add(new Matrix(0).scroll);
+		rightPanel.add(new Matrix(false).scroll);
 		multiplyInfo = new JLabel("Na razie nic tu nie ma"); // Prawdopodobnie trzeba to bedzie zmienic - obecnie robi 
 
 		
