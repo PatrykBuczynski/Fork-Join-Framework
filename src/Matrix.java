@@ -8,12 +8,13 @@ import javax.swing.JTextArea;
 
 public class Matrix extends JTextArea{
 
-	int[][] values = new int[50][50];
+	int[][] randomValues = new int[50][50];
+	int[][] inicialValues = new int[50][50];
 	JScrollPane scroll = new JScrollPane (this, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
 	
 	
-	void printMatrix() {
+	void printMatrix(int[][] array) {
 		this.setText("\t");
 		for(int i=1;i<=50;i++) {
 			this.setText(this.getText()+i+"\t");
@@ -29,7 +30,7 @@ public class Matrix extends JTextArea{
 		for(int row=0; row<50; row++) {
 			this.setText(this.getText()+(row+1)+"||\t");
 			for(int col=0; col<50; col++) {
-				this.setText(this.getText()+values[row][col]+"\t");
+				this.setText(this.getText()+array[row][col]+"\t");
 
 			}
 			this.setText(this.getText()+"||"+row+"\n");
@@ -48,25 +49,34 @@ public class Matrix extends JTextArea{
 	}
 	
 	
-	Matrix(){
+	Matrix(int isRand){
+		
 		super();
 		Random rand = new Random();
 		
 		for(int row=0; row<50; row++) {		
 					
 			for(int col=0; col<50; col++) {
-				values[row][col] = rand.nextInt()%10;
+				randomValues[row][col] = rand.nextInt()%10;
+				inicialValues[row][col] = 0;
 			}
 		}
 		this.setEditable(false);
-		this.
-		printMatrix();
+		
+		switch(isRand){
+			case 1:
+				this.printMatrix(randomValues);
+				break;
+			case 0:
+				this.printMatrix(inicialValues);
+				break;
+		}
 	}
 	
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setSize(new Dimension(500, 500));
-		frame.add(new Matrix().scroll);
+		frame.add(new Matrix(1).scroll);
 		frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 		
 		

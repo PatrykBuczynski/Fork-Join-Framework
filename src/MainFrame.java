@@ -18,7 +18,7 @@ public class MainFrame extends JFrame {
 	JPanel leftPanel;
 	JPanel rightPanel;
 	
-	JTextArea leftMatrix;
+	//JTextArea leftMatrix;
 	JTextArea rightMatrix;
 	
 	JLabel leftTitle;
@@ -33,8 +33,6 @@ public class MainFrame extends JFrame {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("Fork-Join Framework Example");
 		this.setLayout(new GridLayout(1,2));
-		
-		
 		
 		leftPanel = new JPanel();
 		leftPanel.setLayout(new GridLayout(3,1));
@@ -61,19 +59,15 @@ public class MainFrame extends JFrame {
 
 		leftTitle = new JLabel("Input Matrices");
 		leftPanel.add(leftTitle);
-		leftMatrix = new JTextArea(inicialArea);
-		leftMatrix.setLineWrap(true);
-		leftPanel.add(leftMatrix);
+		leftPanel.add(new Matrix(1).scroll);
 		runButton = new JButton("Run");
 		leftPanel.add(runButton);
 		
 		rightTitle = new JLabel("Output Matrices");
 		rightPanel.add(rightTitle);
-		rightMatrix = new JTextArea(inicialArea);
-		rightMatrix.setLineWrap(true);
-		rightPanel.add(rightMatrix);
-		multiplyInfo = new JLabel("Na razie nic tu nie ma"); // Prawdopodobnie trzeba to bedzie zmienic - obecnie robi jako placeholder
-		rightPanel.add(multiplyInfo);
+		//rightMatrix = new JTextArea(inicialArea);
+		rightPanel.add(new Matrix(0).scroll);
+		multiplyInfo = new JLabel("Na razie nic tu nie ma"); // Prawdopodobnie trzeba to bedzie zmienic - obecnie robi 
 
 		
 		
