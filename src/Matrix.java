@@ -74,6 +74,7 @@ public class Matrix extends JTextArea{
 
 	}
 	
+
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		frame.setSize(new Dimension(500, 500));
@@ -84,3 +85,4 @@ public class Matrix extends JTextArea{
 		frame.setVisible(true);
 	}
 }
+
