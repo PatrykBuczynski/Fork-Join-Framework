@@ -12,6 +12,7 @@ public class Matrix extends JTextArea{
 	JScrollPane scroll = new JScrollPane (this, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
 	
+	
 	void printMatrix() {
 		this.setText("\t");
 		for(int i=1;i<=50;i++) {
