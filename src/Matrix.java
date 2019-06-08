@@ -23,7 +23,6 @@ public class Matrix extends JTextArea{
 		this.setText(this.getText()+"\n");
 		
 		
-		
 		for(int row=0; row<50; row++) {
 			this.setText(this.getText()+(row+1)+"||\t");
 			for(int col=0; col<50; col++) {
