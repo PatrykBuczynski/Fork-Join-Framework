@@ -32,27 +32,28 @@ public class MainFrame extends JFrame {
 		this.setLayout(new GridLayout(1,2));
 		
 		leftPanel = new JPanel();
-		leftPanel.setLayout(new GridLayout(3,1));
+		leftPanel.setLayout(new BorderLayout());
 		leftPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(leftPanel);
 		
 		rightPanel = new JPanel();
-		rightPanel.setLayout(new GridLayout(3,1));
+		rightPanel.setLayout(new BorderLayout());
 		rightPanel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		add(rightPanel);
 		
 
 
 		leftTitle = new JLabel("Input Matrices");
-		leftPanel.add(leftTitle);
-		leftPanel.add(new Matrix(true).scroll);
+		leftPanel.add(leftTitle, BorderLayout.NORTH);
+		leftPanel.add(new Matrix(true).scroll, BorderLayout.CENTER);
 		runButton = new JButton("Run");
-		leftPanel.add(runButton);
+		leftPanel.add(runButton, BorderLayout.SOUTH);
 		
 		rightTitle = new JLabel("Output Matrices");
-		rightPanel.add(rightTitle);
-		rightPanel.add(new Matrix(false).scroll);
+		rightPanel.add(rightTitle, BorderLayout.NORTH);
+		rightPanel.add(new Matrix(false).scroll, BorderLayout.CENTER);
 		multiplyInfo = new JLabel("Na razie nic tu nie ma"); // Prawdopodobnie trzeba to bedzie zmienic - obecnie robi 
+		rightPanel.add(multiplyInfo, BorderLayout.SOUTH);
 
 		
 		
@@ -60,10 +61,6 @@ public class MainFrame extends JFrame {
 		setVisible(true);
 	
 	}
-	
-	
-	
-	
 	
 	
 	public static void main(String[] args) {
